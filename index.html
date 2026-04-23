@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -197,7 +196,7 @@ nav.scrolled {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: invert(1) brightness(0.9) sepia(0.15);
+  
 }
 
 .hero h1 {
@@ -499,6 +498,83 @@ section { padding: var(--section-padding) 40px; }
   grid-column: span 2;
   grid-row: span 2;
   aspect-ratio: auto;
+}
+
+
+/* ========== TESTIMONIALS ========== */
+#testimonials {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+#testimonials::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.testimonials-header {
+  max-width: var(--max-width);
+  margin: 0 auto 64px;
+}
+
+.testimonials-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  padding: 48px 40px;
+  position: relative;
+  border-left: 2px solid var(--accent);
+}
+
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.testimonial-quote::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--accent);
+  position: absolute;
+  top: 16px;
+  left: 28px;
+  line-height: 1;
+  opacity: 0.4;
+}
+
+.testimonial-author {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.testimonial-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
 }
 
 /* ========== ABOUT ========== */
@@ -924,7 +1000,7 @@ footer {
 <!-- ========== HERO ========== -->
 <section class="hero">
   <div class="hero-logo">
-    <img src="https://www.alocasomedia.net/assets/images/image01.png?v=422798fa" alt="Al Ocaso Media logo">
+    <img src="images/logo.png" alt="Al Ocaso Media logo">
   </div>
   <h1>Al <em>Ocaso</em></h1>
   <p class="hero-sub">Audiovisual Consultancy</p>
@@ -991,10 +1067,10 @@ footer {
       </div>
     </div>
     <div class="portfolio-item reveal">
-      <img src="https://www.alocasomedia.net/assets/images/gallery01/a7a34ec6.jpg?v=422798fa" alt="Armando - The Moment Album Release" loading="lazy">
+      <img src="images/reggae-festival.jpg" alt="Armando - The Moment Album Release" loading="lazy">
       <div class="portfolio-overlay">
-        <h4>Armando — "The Moment" Album Release</h4>
-        <span>Album Production</span>
+        <h4>Austin Reggae Festival</h4>
+        <span>Live Sound & FOH</span>
       </div>
     </div>
     <div class="portfolio-item reveal">
@@ -1019,42 +1095,63 @@ footer {
       </div>
     </div>
     <div class="portfolio-item reveal">
-      <img src="https://www.alocasomedia.net/assets/images/gallery01/ddbe78cb.jpg?v=422798fa" alt="Houston AV Installation" loading="lazy">
+      <img src="images/construction.jpg" alt="Houston AV Installation" loading="lazy">
       <div class="portfolio-overlay">
-        <h4>Houston</h4>
+        <h4>High-Rise AV Build</h4>
         <span>AV Installation</span>
       </div>
     </div>
     <div class="portfolio-item reveal">
-      <img src="https://www.alocasomedia.net/assets/images/gallery01/7553240d.jpg?v=422798fa" alt="Radio Days" loading="lazy">
+      <img src="images/radio-studio.jpg" alt="Radio Days" loading="lazy">
       <div class="portfolio-overlay">
         <h4>Radio Days</h4>
         <span>AV Installation</span>
       </div>
     </div>
     <div class="portfolio-item reveal">
-      <img src="https://www.alocasomedia.net/assets/images/gallery01/56419219.jpg?v=422798fa" alt="AFF Event Production" loading="lazy">
+      <img src="images/film-festival.jpg" alt="AFF Event Production" loading="lazy">
       <div class="portfolio-overlay">
-        <h4>AFF</h4>
+        <h4>Austin Film Festival</h4>
         <span>Event Production</span>
       </div>
     </div>
     <div class="portfolio-item reveal">
-      <img src="https://www.alocasomedia.net/assets/images/gallery01/840194c5.jpg?v=422798fa" alt="Restaurant AV Installation" loading="lazy">
+      <img src="images/ceiling-install.jpg" alt="Restaurant AV Installation" loading="lazy">
       <div class="portfolio-overlay">
-        <h4>Restaurant AV Installation</h4>
-        <span>Hospitality Audio</span>
+        <h4>Lobby Speaker Installation</h4>
+        <span>Hospitality AV</span>
       </div>
     </div>
     <div class="portfolio-item reveal">
-      <img src="https://www.alocasomedia.net/assets/images/gallery01/050225ef.jpg?v=422798fa" alt="Festival Stage Production" loading="lazy">
+      <img src="images/reggae-festival.jpg" alt="Festival Stage Production" loading="lazy">
       <div class="portfolio-overlay">
-        <h4>Festival Stage Production</h4>
+        <h4>Festival FOH</h4>
         <span>Large-Scale Event</span>
       </div>
     </div>
   </div>
 
+</section>
+
+
+<!-- ========== TESTIMONIALS ========== -->
+<section id="testimonials">
+  <div class="testimonials-header reveal">
+    <p class="section-label">What People Say</p>
+    <h2 class="section-title">Words from Collaborators</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <p class="testimonial-quote">Working with Antonio on my single "Bombon" was an amazing experience. His studio, equipment and professionalism exceeded my expectations. The way he facilitated accommodations is one thing I like the most. I recommend his services to everyone! Al Ocaso Media is the place to produce your music in Austin, Texas!</p>
+      <div class="testimonial-author">Cynthia Lee Fontaine</div>
+      <div class="testimonial-role">RuPaul's Drag Race &middot; Reality TV Star &middot; Singer & Composer</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <p class="testimonial-quote">Having spent my entire professional life in audio production, I can say without hesitation that Antonio is one of the all-around finest people I've had the pleasure of collaborating with. His humanity, creativity, vast skill set, and work ethic make him a unique talent and problem solver in a business that literally runs on those qualities.</p>
+      <div class="testimonial-author">Justin Douglas</div>
+      <div class="testimonial-role">King Electric Recordings</div>
+    </div>
+  </div>
 </section>
 
 <!-- ========== ABOUT ========== -->
@@ -1082,8 +1179,8 @@ footer {
       </div>
     </div>
     <div class="about-visual reveal">
-      <img class="about-img-main" src="https://www.alocasomedia.net/assets/images/gallery01/a7a34ec6.jpg?v=422798fa" alt="Al Ocaso at work">
-      <img class="about-img-accent" src="https://www.alocasomedia.net/assets/images/gallery01/ddbe78cb.jpg?v=422798fa" alt="Installation detail">
+      <img class="about-img-main" src="images/festival.jpg" alt="Al Ocaso at work">
+      <img class="about-img-accent" src="images/stage-right.jpg" alt="Installation detail">
     </div>
   </div>
 </section>
